@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,8 +34,13 @@ class KaliFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_kali, container, false)
+        val view = inflater.inflate(R.layout.fragment_kali, container, false)
+        val tvHistory = view.findViewById<TextView>(R.id.tvHistory)
+
+        // Langsung ambil dari object DataHistory
+        tvHistory.text = DataHistory.historyKali
+
+        return view
     }
 
     companion object {
